@@ -686,26 +686,19 @@ const Impact = () => (
       <Heading size="xl">What will change.</Heading>
     </Stack>
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-      {impacts.map((impact) => {
-        const IconComponent = impact.icon
-        return (
-          <Box
-            key={impact.title}
-            {...cardStyles}
-            display="flex"
-            flexDirection="column"
-            gap={3}
-          >
-            <IconComponent
-              boxSize={9}
-              color="aqua.600"
-              strokeWidth="1.6px"
-            />
-            <Heading size="md">{impact.title}</Heading>
-            <Text color="slate.600">{impact.description}</Text>
-          </Box>
-        )
-      })}
+      {impacts.map((impact) => (
+        <Box
+          key={impact.title}
+          {...cardStyles}
+          display="flex"
+          flexDirection="column"
+          gap={3}
+        >
+          <GoogleIcon name={impact.icon} color="aqua.600" fontSize="36px" />
+          <Heading size="md">{impact.title}</Heading>
+          <Text color="slate.600">{impact.description}</Text>
+        </Box>
+      ))}
     </SimpleGrid>
   </Box>
 )
