@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next"
-import { Box, BoxProps, Heading, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, BoxProps, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
 import { GoogleIcon, SectionHeader } from "../ui"
 
 const cardStyles: BoxProps = {
@@ -31,15 +31,16 @@ export const Objectives = () => {
       <SimpleGrid columns={{ base: 1, sm: 2, xl: 3 }} gap={{ base: 3, md: 6 }}>
         {objectiveKeys.map((item) => (
           <Box key={item.key} {...cardStyles}>
-            <GoogleIcon
-              name={item.icon}
-              color="aqua.600"
-              mb={{ base: 2, md: 4 }}
-              fontSize={{ base: "32px", md: "40px" }}
-            />
-            <Heading size={{ base: "sm", md: "md" }} mb={{ base: 2, md: 3 }}>
-              {t(`objectives.items.${item.key}.title`)}
-            </Heading>
+            <Flex align="center" gap={4} mb={{ base: 2, md: 3 }}>
+              <GoogleIcon
+                name={item.icon}
+                color="aqua.600"
+                fontSize={{ base: "32px", md: "40px" }}
+              />
+              <Heading size={{ base: "sm", md: "md" }} lineHeight="shorter">
+                {t(`objectives.items.${item.key}.title`)}
+              </Heading>
+            </Flex>
             <Text color="slate.600" fontSize={{ base: "sm", md: "md" }}>
               {t(`objectives.items.${item.key}.description`)}
             </Text>
