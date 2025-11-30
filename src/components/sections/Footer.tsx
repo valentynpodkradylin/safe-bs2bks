@@ -1,5 +1,6 @@
+import Image from "next/image"
 import { useTranslation } from "next-i18next"
-import { Box, Container, Flex, Stack, Text } from "@chakra-ui/react"
+import { Box, Container, Flex, HStack, Stack, Text } from "@chakra-ui/react"
 
 export const Footer = () => {
   const { t } = useTranslation("common")
@@ -11,13 +12,24 @@ export const Footer = () => {
           direction={{ base: "column", md: "row" }}
           justify="space-between"
           align={{ base: "flex-start", md: "center" }}
-          gap={4}
+          gap={6}
         >
-          <Stack gap={1}>
-            <Text fontWeight="bold">{t("footer.name")}</Text>
-            <Text color="whiteAlpha.700">{t("footer.description")}</Text>
-          </Stack>
-          <Text color="whiteAlpha.700">
+          <HStack gap={4} align="center">
+            <Image
+              src="/logo.png"
+              alt="SAFE-BS2BKS"
+              width={100}
+              height={40}
+              style={{ height: "auto", width: "auto", maxWidth: "80px" }}
+            />
+            <Stack gap={1}>
+              <Text fontWeight="bold">{t("footer.name")}</Text>
+              <Text color="whiteAlpha.700" fontSize="sm">
+                {t("footer.description")}
+              </Text>
+            </Stack>
+          </HStack>
+          <Text color="whiteAlpha.700" fontSize="sm">
             © {new Date().getFullYear()} SAFE-BS2BKS
           </Text>
         </Flex>

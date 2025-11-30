@@ -14,7 +14,7 @@ export const Contacts = () => {
         p={{ base: 4, md: 10 }}
         border="1px solid"
         borderColor="slate.100"
-        w="max-content"
+        w="full"
       >
         <Stack gap={{ base: 4, md: 8 }} align={{ base: "stretch", md: "center" }}>
           <Stack gap={{ base: 2, md: 4 }} textAlign={{ base: "center", md: "left" }}>
