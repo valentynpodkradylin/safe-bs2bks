@@ -18,32 +18,9 @@ import {
 
 const navLinks = [
   { id: "about", label: "About" },
-  { id: "objectives", label: "Objectives" },
-  { id: "outputs", label: "Outputs" },
   { id: "partners", label: "Partners" },
+  { id: "outputs", label: "Results" },
   { id: "contacts", label: "Contacts" },
-]
-
-const heroHighlights = [
-  {
-    label: "Focus",
-    value: "Safe handling of marine munitions",
-  },
-  {
-    label: "Geography",
-    value: "Baltic know-how → Black Sea MPAs",
-  },
-  {
-    label: "Format",
-    value: "Dialogue, risk assessments, trainings, Action Plan",
-  },
-]
-
-const keyPhrases = [
-  "Baltic monitoring expertise",
-  "Protecting marine ecosystems",
-  "Risk management for MPAs",
-  "Joint Action Plan",
 ]
 
 type IconCardItem = {
@@ -55,28 +32,28 @@ type IconCardItem = {
 const objectiveItems: IconCardItem[] = [
   {
     title: "Environmental risk assessment",
-    description: "Hazard maps and impact scenarios for the Black Sea and MPAs.",
+    description: "Assessment of environmental risks from sea-dumped munitions.",
     icon: "radar",
   },
   {
-    title: "Monitoring and data",
-    description:
-      "Embedding risks into marine monitoring systems and climate adaptation.",
+    title: "Marine monitoring integration",
+    description: "Integration of these risks into marine monitoring systems.",
     icon: "monitoring",
   },
   {
     title: "Capacity building",
-    description: "Hands-on trainings, workshops, and field sessions for specialists.",
+    description: "Capacity building through training and workshops.",
     icon: "school",
   },
   {
     title: "Joint Action Plan",
-    description: "Shared response protocols linking the Baltic and the Black Sea.",
+    description: "Development of a Joint Baltic–Black Sea Action Plan.",
     icon: "checklist_rtl",
   },
   {
     title: "Communication",
-    description: "Dialogue with authorities, science, and communities for one voice.",
+    description:
+      "Communication with authorities, scientific community, and the public.",
     icon: "group",
   },
 ]
@@ -84,85 +61,66 @@ const objectiveItems: IconCardItem[] = [
 const outputItems: IconCardItem[] = [
   {
     title: "Practical guidelines",
-    description: "Step-by-step instructions for national authorities.",
+    description: "Practical guidelines for national authorities.",
     icon: "menu_book",
   },
   {
     title: "Policy briefs",
-    description: "Analytical overviews for rapid decision making.",
+    description: "Policy briefs for evidence-based decision-making.",
     icon: "article",
   },
   {
-    title: "Training packages",
-    description: "Case studies, trainings, and infographics for experts and communities.",
+    title: "Training materials",
+    description: "Training materials and case studies.",
     icon: "cast_for_education",
   },
   {
     title: "Awareness videos",
-    description: "Short videos highlighting risks and solutions.",
+    description: "Awareness-raising videos for communities and stakeholders.",
     icon: "slideshow",
   },
   {
     title: "Joint Action Plan",
-    description: "Roadmap for safe munitions management.",
+    description: "The Joint Action Plan as a tool for long-term risk management.",
     icon: "playlist_add_check_circle",
-  },
-]
-
-const approachSteps = [
-  {
-    title: "Scanning Baltic experience",
-    detail: "Selecting the most effective methods and analyzing them.",
-  },
-  {
-    title: "Adapting to the Black Sea",
-    detail: "Assessing risks, ecosystems, and regulatory gaps.",
-  },
-  {
-    title: "Training and exchange",
-    detail: "Workshops, trainings, and field demonstrations for regional experts.",
-  },
-  {
-    title: "Action plan and implementation",
-    detail: "Shared recommendations, aligned protocols, and a roadmap.",
   },
 ]
 
 type PartnerItem = {
   name: string
-  description: string
+  country: string
   logo: string | null
 }
 
 const partners: PartnerItem[] = [
   {
     name: "HELCOM",
-    description: "Regional coordinator / H9",
+    country: "Regional coordinator",
     logo: "/partners/helcom.png",
   },
   {
     name: "Aarhus University",
-    description: "Denmark",
+    country: "Denmark",
     logo: "/partners/aarhus.svg",
   },
   {
     name: "Latvian Institute of Aquatic Ecology",
-    description: "Latvia",
+    country: "Latvia",
     logo: "/partners/lhei.svg",
   },
   {
     name: "Ukrainian Scientific Centre of Ecology of the Sea (UkrSCES)",
-    description: "Ukraine",
+    country: "Ukraine",
     logo: "/partners/ukrsces.png",
   },
   {
-    name: "Institute of Marine Biology NAS of Ukraine",
-    description: "Ukraine",
+    name: "Institute of Marine Biology of the National Academy of Sciences of Ukraine",
+    country: "Ukraine",
     logo: "/partners/imb_nasu.png",
   },
   {
-    name: "Institute of Climate-Smart Agriculture NAAS",
-    description: "Ukraine",
+    name: "Institute of Climate-Smart Agriculture of the National Academy of Agrarian Sciences of Ukraine",
+    country: "Ukraine",
     logo: "/partners/icsanaas.png",
   },
 ]
@@ -176,7 +134,7 @@ const getInitials = (name: string) =>
     .slice(0, 3)
     .toUpperCase()
 
-const PartnerLogo = ({ logo, name }: PartnerItem) => {
+const PartnerLogo = ({ logo, name }: { logo: string | null; name: string }) => {
   if (!logo) {
     return (
       <Flex
@@ -209,22 +167,22 @@ const PartnerLogo = ({ logo, name }: PartnerItem) => {
 const impacts: IconCardItem[] = [
   {
     title: "Environmental",
-    description: "Reducing risks for biodiversity and protected areas.",
-    icon: "info",
+    description: "Risk reduction for marine ecosystems and MPAs.",
+    icon: "eco",
   },
   {
     title: "Scientific",
-    description: "Strengthening interregional expertise and assessment methods.",
+    description: "Strengthened interregional expertise and risk assessment methodologies.",
     icon: "science",
   },
   {
     title: "Policy",
-    description: "Evidence base for decisions and aligned approaches.",
+    description: "Support for evidence-based decision-making and harmonisation of approaches.",
     icon: "gavel",
   },
   {
     title: "Societal",
-    description: "Greater awareness among coastal communities and rescue services.",
+    description: "Increased awareness among coastal communities.",
     icon: "diversity_3",
   },
 ]
@@ -266,7 +224,7 @@ const Hero = () => (
     <Box
       position="absolute"
       inset={0}
-      opacity={0.25}
+      opacity={0.2}
       backgroundImage="url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=70')"
       backgroundSize="cover"
       backgroundPosition="center"
@@ -289,20 +247,18 @@ const Hero = () => (
               height={50}
               style={{ height: "auto", width: "auto", maxWidth: "160px" }}
             />
-            <Stack gap={1}>
+            <Stack gap={0}>
               <Text
-                fontSize="sm"
-                textTransform="uppercase"
-                letterSpacing="0.2em"
-                color="aqua.200"
+                fontSize="lg"
+                fontWeight="bold"
+                letterSpacing="0.05em"
               >
                 SAFE-BS2BKS
               </Text>
-              <Heading size="md">SAFE Actions for Environment</Heading>
             </Stack>
           </HStack>
           <HStack
-            gap={4}
+            gap={6}
             display={{ base: "none", lg: "flex" }}
             fontWeight="medium"
           >
@@ -326,221 +282,146 @@ const Hero = () => (
             _hover={{ bg: "aqua.300" }}
             borderRadius="pill"
           >
-            <NextLink href="#contacts">Contact the coordinator</NextLink>
+            <NextLink href="#contacts">Contact</NextLink>
           </Button>
         </Flex>
 
-        <Grid
-          templateColumns={{ base: "1fr", lg: "1fr 0.9fr" }}
-          gap={{ base: 10, lg: 16 }}
-          alignItems="center"
-          pb={{ base: 12, md: 20 }}
-        >
-          <Stack gap={6}>
-            <Text
-              fontSize="sm"
-              textTransform="uppercase"
-              letterSpacing="0.3em"
-              color="aqua.200"
+        <Stack gap={6} maxW="4xl" pb={{ base: 12, md: 20 }}>
+          <Text
+            fontSize="sm"
+            textTransform="uppercase"
+            letterSpacing="0.3em"
+            color="aqua.200"
+          >
+            SAFE Actions for Environment
+          </Text>
+          <Heading as="h1" size="2xl" lineHeight="1.15">
+            Baltic Solutions to the Black Sea
+          </Heading>
+          <Text fontSize="xl" color="whiteAlpha.900" maxW="3xl">
+            Implementation of proven Baltic approaches to the management of
+            sea-dumped munitions and enhancement of environmental security in
+            the Black Sea, with a particular focus on marine protected areas.
+          </Text>
+          <HStack gap={4} flexWrap="wrap" pt={2}>
+            <Button
+              asChild
+              colorScheme="cyan"
+              bg="white"
+              color="ocean.900"
+              borderRadius="pill"
+              _hover={{ bg: "aqua.100" }}
             >
-              Baltic solutions → Black Sea
-            </Text>
-            <Heading as="h1" size="2xl" lineHeight="1.1" maxW="3xl">
-              Safe management of underwater munitions in the Black Sea, powered
-              by Baltic experience.
-            </Heading>
-            <Text fontSize="lg" color="whiteAlpha.900" maxW="2xl">
-              SAFE Actions for Environment – Baltic Solutions to the Black Sea
-              (SAFE-BS2BKS) deploys proven HELCOM approaches from Baltic
-              countries to reduce ecological risks in the Black Sea and its
-              protected waters.
-            </Text>
-            <HStack gap={4} flexWrap="wrap">
-              <Button
-                asChild
-                colorScheme="cyan"
-                bg="white"
-                color="ocean.900"
-                borderRadius="pill"
-                _hover={{ bg: "aqua.100" }}
-              >
-                <NextLink href="#about">About the project</NextLink>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                borderColor="whiteAlpha.600"
-                color="white"
-                borderRadius="pill"
-                _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
-              >
-                <NextLink href="#partners">Partners</NextLink>
-              </Button>
-            </HStack>
-          </Stack>
-          <Box position="relative">
-            <Box
-              borderRadius="3xl"
-              border="1px solid"
-              borderColor="whiteAlpha.400"
-              p={8}
-              bg="whiteAlpha.50"
-              backdropFilter="blur(18px)"
+              <NextLink href="#about">About</NextLink>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              borderColor="whiteAlpha.600"
+              color="white"
+              borderRadius="pill"
+              _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
             >
-              <Text
-                fontSize="sm"
-                textTransform="uppercase"
-                letterSpacing="0.3em"
-                color="aqua.200"
-                mb={4}
-              >
-                Key highlights
-              </Text>
-              <Stack gap={6}>
-                {heroHighlights.map((item) => (
-                  <Box key={item.label}>
-                    <Text
-                      fontSize="sm"
-                      color="aqua.100"
-                      textTransform="uppercase"
-                      letterSpacing="0.15em"
-                    >
-                      {item.label}
-                    </Text>
-                    <Text fontSize="lg" fontWeight="semibold">
-                      {item.value}
-                    </Text>
-                  </Box>
-                ))}
-              </Stack>
-              <Box h="1px" my={6} backgroundColor="whiteAlpha.300" />
-              <Stack gap={3}>
-                <Text color="aqua.100" fontSize="sm">
-                  Trajectory
-                </Text>
-                <Flex
-                  align="center"
-                  gap={3}
-                  fontWeight="semibold"
-                  fontSize="lg"
-                >
-                  Baltic Sea
-                  <Box as="span" fontSize="2xl" color="aqua.200">
-                    →
-                  </Box>
-                  Black Sea
-                </Flex>
-                <Text color="whiteAlpha.800">
-                  HELCOM expertise supporting BSAP S34 and Ukraine.
-                </Text>
-              </Stack>
-            </Box>
-            <Box
-              position="absolute"
-              inset={-4}
-              borderRadius="3xl"
-              border="1px dashed"
-              borderColor="whiteAlpha.300"
-              transform="rotate(-2deg)"
-              opacity={0.4}
-            />
-          </Box>
-        </Grid>
+              <NextLink href="#partners">Partners</NextLink>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              borderColor="whiteAlpha.600"
+              color="white"
+              borderRadius="pill"
+              _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
+            >
+              <NextLink href="#outputs">Results</NextLink>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              borderColor="whiteAlpha.600"
+              color="white"
+              borderRadius="pill"
+              _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
+            >
+              <NextLink href="#contacts">Contacts</NextLink>
+            </Button>
+          </HStack>
+        </Stack>
       </Container>
     </Box>
   </Box>
 )
 
+const aboutSections = [
+  {
+    icon: "flag",
+    title: "Project Goal",
+    text: "The goal of the SAFE-BS2BKS project is to transfer and implement the most effective and safe techniques used in the Baltic Sea for managing underwater munitions in the Black Sea region, with a strong focus on environmental security and the sustainability of marine ecosystems, especially in protected areas.",
+  },
+  {
+    icon: "groups",
+    title: "Project Leadership",
+    text: "The project leader H9 (the EU and the Contracting Parties to HELCOM that are also Member States of the EU) will leverage its macro-regional network to foster discussions and organize key stakeholder dialogue and workshops. This will provide a substantial input for HELCOM BSAP action S34 while ensuring cross-sectoral multidisciplinary outreach and knowledge transfer to the Black Sea region and Ukraine in particular.",
+  },
+  {
+    icon: "eco",
+    title: "Key Activities",
+    text: "Activities will apply proven Baltic methods for assessing and mitigating hazards from submerged munitions, integrating them into marine monitoring and climate adaptation strategies. Special care will be taken in environmentally protected and sensitive marine areas where sea-dumped munitions can harm biodiversity and ecosystem integrity.",
+  },
+  {
+    icon: "school",
+    title: "Knowledge Exchange",
+    text: "Black Sea stakeholders will gain essential expertise through this exchange of knowledge and training. The project will develop an Action Plan with recommendations and an outline of future actions for the safe management of unexploded ordnances in the Black Sea, ensuring structured and coordinated marine environmental protection and risk management.",
+  },
+]
+
 const About = () => (
   <Box id="about" mb={{ base: 16, md: 24 }}>
-    <Grid
-      templateColumns={{ base: "1fr", lg: "1.2fr 0.8fr" }}
-      gap={{ base: 12, lg: 16 }}
-      alignItems="center"
-    >
-      <Stack gap={5}>
-        <Text
-          textTransform="uppercase"
-          letterSpacing="0.3em"
-          color="aqua.500"
-          fontSize="sm"
-        >
-          About the project
-        </Text>
-        <Heading size="2xl">
-          Baltic know-how for the Black Sea&rsquo;s environmental security.
-        </Heading>
-        <Text fontSize="lg" color="slate.600">
-          The SAFE-BS2BKS project transfers the most effective underwater
-          munitions management practices proven in the Baltic region. We help
-          Black Sea countries assess risks, integrate them into monitoring, plan
-          climate adaptation, and safeguard marine ecosystems, especially within
-          protected areas.
-        </Text>
-        <Text fontSize="lg" color="slate.600">
-          Project lead H9 (EU and HELCOM EU parties) mobilizes a macro-regional
-          network for dialogue, trainings, and an Action Plan with
-          recommendations for safe underwater munitions management in the Black
-          Sea.
-        </Text>
-      </Stack>
-      <Box
-        bg="white"
-        borderRadius="2xl"
-        p={6}
-        border="1px solid"
-        borderColor="slate.100"
-        boxShadow="0 24px 50px rgba(9, 34, 52, 0.06)"
+    <Stack gap={6} mb={10}>
+      <Text
+        textTransform="uppercase"
+        letterSpacing="0.3em"
+        color="aqua.500"
+        fontSize="sm"
       >
-        <Stack gap={0} position="relative">
-          {/* Vertical connector line */}
-          <Box
-            position="absolute"
-            left="15px"
-            top="20px"
-            bottom="20px"
-            w="2px"
-            bg="aqua.200"
-            borderRadius="full"
-          />
-          {keyPhrases.map((phrase, index) => (
-            <Flex
-              key={phrase}
-              align="center"
-              py={4}
-              gap={5}
-              position="relative"
-              _notFirst={{
-                borderTop: "1px dashed",
-                borderColor: "slate.100",
-              }}
+        About the project
+      </Text>
+      <Heading size="2xl">
+        SAFE Actions for Environment – Baltic Solutions to the Black Sea
+      </Heading>
+    </Stack>
+
+    <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+      {aboutSections.map((section) => (
+        <Box
+          key={section.title}
+          {...cardStyles}
+          display="flex"
+          flexDirection="column"
+          gap={4}
+        >
+          <Flex align="center" gap={3}>
+            <Box
+              w={10}
+              h={10}
+              borderRadius="xl"
+              bg="aqua.100"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              flexShrink={0}
             >
-              <Box
-                w={8}
-                h={8}
-                borderRadius="full"
-                bg="aqua.500"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                color="white"
-                fontSize="sm"
-                fontWeight="bold"
-                flexShrink={0}
-                position="relative"
-                zIndex={1}
-                boxShadow="0 2px 8px rgba(40, 187, 223, 0.4)"
-              >
-                {index + 1}
-              </Box>
-              <Text fontWeight="medium" color="slate.700">
-                {phrase}
-              </Text>
-            </Flex>
-          ))}
-        </Stack>
-      </Box>
-    </Grid>
+              <GoogleIcon name={section.icon} fontSize="24px" color="aqua.600" />
+            </Box>
+            <Heading size="md" color="ocean.900">
+              {section.title}
+            </Heading>
+          </Flex>
+          <Text color="slate.600" lineHeight="tall">
+            {section.text}
+          </Text>
+        </Box>
+      ))}
+    </SimpleGrid>
   </Box>
 )
 
@@ -555,7 +436,7 @@ const Objectives = () => (
       >
         Key Objectives
       </Text>
-      <Heading size="xl">What SAFE-BS2BKS delivers.</Heading>
+      <Heading size="xl">What SAFE-BS2BKS aims to achieve.</Heading>
     </Stack>
     <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6}>
       {objectiveItems.map((item) => (
@@ -572,131 +453,30 @@ const Objectives = () => (
 )
 
 const Outputs = () => (
-  <>
-    <Box id="outputs" mb={{ base: 16, md: 24 }}>
-      <Stack gap={6} mb={10}>
-        <Text
-          textTransform="uppercase"
-          letterSpacing="0.3em"
-          color="aqua.500"
-          fontSize="sm"
-        >
-          Key Outputs
-        </Text>
-        <Heading size="xl">Tangible project outcomes.</Heading>
-      </Stack>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
-        {outputItems.map((item) => (
-          <Box key={item.title} {...cardStyles}>
-            <GoogleIcon name={item.icon} color="aqua.600" mb={4} />
-            <Heading size="md" mb={3}>
-              {item.title}
-            </Heading>
-            <Text color="slate.600">{item.description}</Text>
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Box>
-    <Box mb={{ base: 16, md: 24 }}>
-      <Stack gap={6} mb={10}>
-        <Text
-          textTransform="uppercase"
-          letterSpacing="0.3em"
-          color="aqua.500"
-          fontSize="sm"
-        >
-          How we work
-        </Text>
-        <Heading size="xl">A four-step process.</Heading>
-      </Stack>
-      <Box
-        bg="white"
-        borderRadius="3xl"
-        p={{ base: 6, md: 10 }}
-        border="1px solid"
-        borderColor="slate.100"
+  <Box id="outputs" mb={{ base: 16, md: 24 }}>
+    <Stack gap={6} mb={10}>
+      <Text
+        textTransform="uppercase"
+        letterSpacing="0.3em"
+        color="aqua.500"
+        fontSize="sm"
       >
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          gap={{ base: 0, md: 4 }}
-        >
-          {approachSteps.map((step, index) => (
-            <Flex
-              key={step.title}
-              flex="1"
-              direction="column"
-              align={{ base: "flex-start", md: "center" }}
-              position="relative"
-              pb={{ base: 8, md: 0 }}
-              _last={{ pb: 0 }}
-            >
-              {/* Connector line - horizontal on desktop, vertical on mobile */}
-              {index < approachSteps.length - 1 && (
-                <>
-                  {/* Desktop horizontal line */}
-                  <Box
-                    display={{ base: "none", md: "block" }}
-                    position="absolute"
-                    top="24px"
-                    left="calc(50% + 28px)"
-                    right="calc(-50% + 28px)"
-                    h="2px"
-                    bg="aqua.200"
-                  />
-                  {/* Mobile vertical line */}
-                  <Box
-                    display={{ base: "block", md: "none" }}
-                    position="absolute"
-                    left="23px"
-                    top="56px"
-                    bottom="0"
-                    w="2px"
-                    bg="aqua.200"
-                  />
-                </>
-              )}
-
-              {/* Step circle */}
-              <Box
-                w={12}
-                h={12}
-                borderRadius="full"
-                bg="aqua.500"
-                color="white"
-                fontWeight="bold"
-                fontSize="lg"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                position="relative"
-                zIndex={1}
-                boxShadow="0 4px 14px rgba(40, 187, 223, 0.4)"
-                mb={4}
-              >
-                {index + 1}
-              </Box>
-
-              {/* Content */}
-              <Stack
-                gap={2}
-                textAlign={{ base: "left", md: "center" }}
-                pl={{ base: 16, md: 0 }}
-                mt={{ base: -14, md: 0 }}
-                px={{ md: 2 }}
-              >
-                <Heading size="md" color="ocean.900">
-                  {step.title}
-                </Heading>
-                <Text color="slate.500" fontSize="sm" lineHeight="tall">
-                  {step.detail}
-                </Text>
-              </Stack>
-            </Flex>
-          ))}
-        </Flex>
-      </Box>
-    </Box>
-  </>
+        Key Outputs
+      </Text>
+      <Heading size="xl">Tangible project results.</Heading>
+    </Stack>
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
+      {outputItems.map((item) => (
+        <Box key={item.title} {...cardStyles}>
+          <GoogleIcon name={item.icon} color="aqua.600" mb={4} />
+          <Heading size="md" mb={3}>
+            {item.title}
+          </Heading>
+          <Text color="slate.600">{item.description}</Text>
+        </Box>
+      ))}
+    </SimpleGrid>
+  </Box>
 )
 
 const Partners = () => (
@@ -733,13 +513,15 @@ const Partners = () => (
             px={4}
           >
             <Box w="100%" h="100%" position="relative">
-              <PartnerLogo {...partner} />
+              <PartnerLogo logo={partner.logo} name={partner.name} />
             </Box>
           </Flex>
-          <Heading size="md" mb={2}>
+          <Heading size="md" mb={1}>
             {partner.name}
           </Heading>
-          <Text color="slate.600">{partner.description}</Text>
+          <Text color="slate.500" fontSize="sm">
+            {partner.country}
+          </Text>
         </Box>
       ))}
     </SimpleGrid>
@@ -757,7 +539,7 @@ const Impact = () => (
       >
         Project Impact
       </Text>
-      <Heading size="xl">What will change.</Heading>
+      <Heading size="xl">Expected outcomes.</Heading>
     </Stack>
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
       {impacts.map((impact) => (
@@ -778,7 +560,7 @@ const Impact = () => (
 )
 
 const Contacts = () => (
-  <Box id="contacts" mb={{ base: 16, md: 24 }}>
+  <Box id="contacts">
     <Stack gap={6} mb={10}>
       <Text
         textTransform="uppercase"
@@ -788,44 +570,54 @@ const Contacts = () => (
       >
         Contacts
       </Text>
-      <Heading size="xl">Get in touch with the coordinator.</Heading>
+      <Heading size="xl">Get in touch.</Heading>
     </Stack>
-    <Flex
-      direction={{ base: "column", md: "row" }}
-      gap={8}
+    <Box
       bg="white"
       borderRadius="3xl"
       p={{ base: 6, md: 10 }}
       border="1px solid"
       borderColor="slate.100"
-      align="center"
     >
-      <Stack flex="1" gap={4}>
-        <Text fontSize="lg">
-          Coordinator:{" "}
-          <Text as="span" fontWeight="bold">
+      <Grid
+        templateColumns={{ base: "1fr", md: "1fr auto" }}
+        gap={8}
+        alignItems="center"
+      >
+        <Stack gap={4}>
+          <Text fontSize="lg">
+            <Text as="span" fontWeight="bold">
+              Coordinator:
+            </Text>{" "}
             Andriy Grafov (HELCOM)
           </Text>
-        </Text>
-        <Text color="slate.600">
-          Questions about partnerships, workshops, or access to materials?
-          Reach out anytime.
-        </Text>
-        <Text fontSize="lg">E-mail: andriy.grafov@helsinki.fi</Text>
-      </Stack>
-      <Button
-        asChild
-        size="lg"
-        colorScheme="cyan"
-        bg="ocean.900"
-        color="white"
-        borderRadius="pill"
-        px={10}
-        _hover={{ bg: "ocean.800" }}
-      >
-        <Link href="mailto:andriy.grafov@helsinki.fi">Email the coordinator</Link>
-      </Button>
-    </Flex>
+          <Text fontSize="lg">
+            <Text as="span" fontWeight="bold">
+              E-mail:
+            </Text>{" "}
+            <Link
+              href="mailto:andriy.grafov@helsinki.fi"
+              color="aqua.600"
+              _hover={{ color: "aqua.700" }}
+            >
+              andriy.grafov@helsinki.fi
+            </Link>
+          </Text>
+        </Stack>
+        <Button
+          asChild
+          size="lg"
+          colorScheme="cyan"
+          bg="ocean.900"
+          color="white"
+          borderRadius="pill"
+          px={10}
+          _hover={{ bg: "ocean.800" }}
+        >
+          <Link href="mailto:andriy.grafov@helsinki.fi">Send email</Link>
+        </Button>
+      </Grid>
+    </Box>
   </Box>
 )
 
@@ -844,10 +636,6 @@ const Footer = () => (
             SAFE Actions for Environment – Baltic Solutions to the Black Sea
           </Text>
         </Stack>
-        <HStack gap={6} color="whiteAlpha.700">
-          <Link href="#about">Privacy</Link>
-          <Link href="#about">Terms</Link>
-        </HStack>
         <Text color="whiteAlpha.700">
           © {new Date().getFullYear()} SAFE-BS2BKS
         </Text>
@@ -860,10 +648,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>SAFE-BS2BKS | Baltic solutions for the Black Sea</title>
+        <title>SAFE-BS2BKS | Baltic Solutions to the Black Sea</title>
         <meta
           name="description"
-          content="SAFE Actions for Environment – Baltic Solutions to the Black Sea. Managing marine munitions and protecting the Black Sea."
+          content="SAFE Actions for Environment – Baltic Solutions to the Black Sea. Implementation of proven Baltic approaches to the management of sea-dumped munitions."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
