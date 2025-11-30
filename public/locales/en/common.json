@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "about": "About",
+    "partners": "Partners",
+    "results": "Results",
+    "contacts": "Contacts",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle": "SAFE Actions for Environment",
+    "title": "Baltic Solutions to the Black Sea",
+    "description": "Implementation of proven Baltic approaches to the management of sea-dumped munitions and enhancement of environmental security in the Black Sea, with a particular focus on marine protected areas."
+  },
+  "about": {
+    "label": "About the project",
+    "title": "SAFE Actions for Environment – Baltic Solutions to the Black Sea",
+    "sections": {
+      "goal": {
+        "title": "Project Goal",
+        "text": "The goal of the SAFE-BS2BKS project is to transfer and implement the most effective and safe techniques used in the Baltic Sea for managing underwater munitions in the Black Sea region, with a strong focus on environmental security and the sustainability of marine ecosystems, especially in protected areas."
+      },
+      "leadership": {
+        "title": "Project Leadership",
+        "text": "The project leader H9 (the EU and the Contracting Parties to HELCOM that are also Member States of the EU) will leverage its macro-regional network to foster discussions and organize key stakeholder dialogue and workshops. This will provide a substantial input for HELCOM BSAP action S34 while ensuring cross-sectoral multidisciplinary outreach and knowledge transfer to the Black Sea region and Ukraine in particular."
+      },
+      "activities": {
+        "title": "Key Activities",
+        "text": "Activities will apply proven Baltic methods for assessing and mitigating hazards from submerged munitions, integrating them into marine monitoring and climate adaptation strategies. Special care will be taken in environmentally protected and sensitive marine areas where sea-dumped munitions can harm biodiversity and ecosystem integrity."
+      },
+      "exchange": {
+        "title": "Knowledge Exchange",
+        "text": "Black Sea stakeholders will gain essential expertise through this exchange of knowledge and training. The project will develop an Action Plan with recommendations and an outline of future actions for the safe management of unexploded ordnances in the Black Sea, ensuring structured and coordinated marine environmental protection and risk management."
+      }
+    }
+  },
+  "objectives": {
+    "label": "Key Objectives",
+    "title": "What SAFE-BS2BKS aims to achieve.",
+    "items": {
+      "risk": {
+        "title": "Environmental risk assessment",
+        "description": "Assessment of environmental risks from sea-dumped munitions."
+      },
+      "monitoring": {
+        "title": "Marine monitoring integration",
+        "description": "Integration of these risks into marine monitoring systems."
+      },
+      "capacity": {
+        "title": "Capacity building",
+        "description": "Capacity building through training and workshops."
+      },
+      "plan": {
+        "title": "Joint Action Plan",
+        "description": "Development of a Joint Baltic–Black Sea Action Plan."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Communication with authorities, scientific community, and the public."
+      }
+    }
+  },
+  "outputs": {
+    "label": "Key Outputs",
+    "title": "Tangible project results.",
+    "items": {
+      "guidelines": {
+        "title": "Practical guidelines",
+        "description": "Practical guidelines for national authorities."
+      },
+      "briefs": {
+        "title": "Policy briefs",
+        "description": "Policy briefs for evidence-based decision-making."
+      },
+      "training": {
+        "title": "Training materials",
+        "description": "Training materials and case studies."
+      },
+      "videos": {
+        "title": "Awareness videos",
+        "description": "Awareness-raising videos for communities and stakeholders."
+      },
+      "actionPlan": {
+        "title": "Joint Action Plan",
+        "description": "The Joint Action Plan as a tool for long-term risk management."
+      }
+    }
+  },
+  "partners": {
+    "label": "Partners",
+    "title": "International coalition.",
+    "items": {
+      "helcom": {
+        "name": "HELCOM",
+        "country": "Regional coordinator"
+      },
+      "aarhus": {
+        "name": "Aarhus University",
+        "country": "Denmark"
+      },
+      "liae": {
+        "name": "Latvian Institute of Aquatic Ecology",
+        "country": "Latvia"
+      },
+      "ukrsces": {
+        "name": "Ukrainian Scientific Centre of Ecology of the Sea (UkrSCES)",
+        "country": "Ukraine"
+      },
+      "imb": {
+        "name": "Institute of Marine Biology of the National Academy of Sciences of Ukraine",
+        "country": "Ukraine"
+      },
+      "icsa": {
+        "name": "Institute of Climate-Smart Agriculture of the National Academy of Agrarian Sciences of Ukraine",
+        "country": "Ukraine"
+      }
+    }
+  },
+  "impact": {
+    "label": "Project Impact",
+    "title": "Expected outcomes.",
+    "items": {
+      "environmental": {
+        "title": "Environmental",
+        "description": "Risk reduction for marine ecosystems and MPAs."
+      },
+      "scientific": {
+        "title": "Scientific",
+        "description": "Strengthened interregional expertise and risk assessment methodologies."
+      },
+      "policy": {
+        "title": "Policy",
+        "description": "Support for evidence-based decision-making and harmonisation of approaches."
+      },
+      "societal": {
+        "title": "Societal",
+        "description": "Increased awareness among coastal communities."
+      }
+    }
+  },
+  "contacts": {
+    "label": "Contacts",
+    "title": "Get in touch.",
+    "coordinator": "Coordinator:",
+    "coordinatorName": "Andriy Grafov (HELCOM)",
+    "email": "E-mail:",
+    "sendEmail": "Send email"
+  },
+  "footer": {
+    "name": "SAFE-BS2BKS",
+    "description": "SAFE Actions for Environment – Baltic Solutions to the Black Sea"
+  }
+}
+

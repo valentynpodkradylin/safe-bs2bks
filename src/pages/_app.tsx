@@ -1,5 +1,6 @@
 import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
 import { ThemeProvider } from "next-themes";
+import { appWithTranslation } from "next-i18next";
 import { AppProps } from "next/app";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "@/styles/globals.css";
@@ -72,7 +73,7 @@ const customSystem = createSystem(defaultConfig, {
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${headingFont.variable} ${bodyFont.variable}`}>
       <ChakraProvider value={customSystem}>
@@ -83,3 +84,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </div>
   );
 }
+
+export default appWithTranslation(App);

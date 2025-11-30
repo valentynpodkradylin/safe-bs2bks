@@ -1,4 +1,7 @@
 import Head from "next/head"
+import { GetStaticProps } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { useTranslation } from "next-i18next"
 import { Box, Container } from "@chakra-ui/react"
 import {
   Hero,
@@ -13,14 +16,13 @@ import {
 } from "@/components"
 
 export default function Home() {
+  const { t } = useTranslation("common")
+
   return (
     <>
       <Head>
-        <title>SAFE-BS2BKS | Baltic Solutions to the Black Sea</title>
-        <meta
-          name="description"
-          content="SAFE Actions for Environment – Baltic Solutions to the Black Sea. Implementation of proven Baltic approaches to the management of sea-dumped munitions."
-        />
+        <title>SAFE-BS2BKS | {t("hero.title")}</title>
+        <meta name="description" content={t("hero.description")} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -52,4 +54,12 @@ export default function Home() {
       </Box>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+  }
 }

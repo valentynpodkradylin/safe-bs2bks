@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next"
 import { Box, BoxProps, Heading, SimpleGrid, Text } from "@chakra-ui/react"
 import { GoogleIcon, SectionHeader } from "../ui"
 
@@ -10,48 +11,33 @@ const cardStyles: BoxProps = {
   boxShadow: "0 24px 50px rgba(9, 34, 52, 0.06)",
 }
 
-const outputItems = [
-  {
-    title: "Practical guidelines",
-    description: "Practical guidelines for national authorities.",
-    icon: "menu_book",
-  },
-  {
-    title: "Policy briefs",
-    description: "Policy briefs for evidence-based decision-making.",
-    icon: "article",
-  },
-  {
-    title: "Training materials",
-    description: "Training materials and case studies.",
-    icon: "cast_for_education",
-  },
-  {
-    title: "Awareness videos",
-    description: "Awareness-raising videos for communities and stakeholders.",
-    icon: "slideshow",
-  },
-  {
-    title: "Joint Action Plan",
-    description: "The Joint Action Plan as a tool for long-term risk management.",
-    icon: "playlist_add_check_circle",
-  },
+const outputKeys = [
+  { key: "guidelines", icon: "menu_book" },
+  { key: "briefs", icon: "article" },
+  { key: "training", icon: "cast_for_education" },
+  { key: "videos", icon: "slideshow" },
+  { key: "actionPlan", icon: "playlist_add_check_circle" },
 ]
 
-export const Outputs = () => (
-  <Box id="outputs" mb={{ base: 16, md: 24 }}>
-    <SectionHeader label="Key Outputs" title="Tangible project results." />
-    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
-      {outputItems.map((item) => (
-        <Box key={item.title} {...cardStyles}>
-          <GoogleIcon name={item.icon} color="aqua.600" mb={4} />
-          <Heading size="md" mb={3}>
-            {item.title}
-          </Heading>
-          <Text color="slate.600">{item.description}</Text>
-        </Box>
-      ))}
-    </SimpleGrid>
-  </Box>
-)
+export const Outputs = () => {
+  const { t } = useTranslation("common")
 
+  return (
+    <Box id="outputs" mb={{ base: 16, md: 24 }}>
+      <SectionHeader label={t("outputs.label")} title={t("outputs.title")} />
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
+        {outputKeys.map((item) => (
+          <Box key={item.key} {...cardStyles}>
+            <GoogleIcon name={item.icon} color="aqua.600" mb={4} />
+            <Heading size="md" mb={3}>
+              {t(`outputs.items.${item.key}.title`)}
+            </Heading>
+            <Text color="slate.600">
+              {t(`outputs.items.${item.key}.description`)}
+            </Text>
+          </Box>
+        ))}
+      </SimpleGrid>
+    </Box>
+  )
+}
