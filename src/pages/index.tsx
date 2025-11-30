@@ -225,7 +225,7 @@ const Hero = () => (
       position="absolute"
       inset={0}
       opacity={0.2}
-      backgroundImage="url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=70')"
+      backgroundImage="url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=70')"
       backgroundSize="cover"
       backgroundPosition="center"
     />
@@ -377,17 +377,11 @@ const aboutSections = [
 const About = () => (
   <Box id="about" mb={{ base: 16, md: 24 }}>
     <Stack gap={6} mb={10}>
-      <Text
-        textTransform="uppercase"
-        letterSpacing="0.3em"
-        color="aqua.500"
-        fontSize="sm"
+      <SectionHeader  
+        label="About the project"
+        title="SAFE Actions for Environment – Baltic Solutions to the Black Sea"
       >
-        About the project
-      </Text>
-      <Heading size="2xl">
-        SAFE Actions for Environment – Baltic Solutions to the Black Sea
-      </Heading>
+      </SectionHeader>
     </Stack>
 
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
@@ -425,19 +419,66 @@ const About = () => (
   </Box>
 )
 
+const PhotoBanner = ({
+  src,
+  alt,
+  overlay = true,
+}: {
+  src: string
+  alt: string
+  overlay?: boolean
+}) => (
+  <Box
+    position="relative"
+    h={{ base: "200px", md: "280px" }}
+    borderRadius="3xl"
+    overflow="hidden"
+    mb={{ base: 16, md: 24 }}
+    role="img"
+    aria-label={alt}
+  >
+    <Box
+      position="absolute"
+      inset={0}
+      backgroundImage={`url('${src}')`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+    />
+    {overlay && (
+      <Box
+        position="absolute"
+        inset={0}
+        bgGradient="linear(to-r, ocean.900/70, transparent)"
+      />
+    )}
+  </Box>
+)
+
+const SectionHeader = ({
+  label,
+  title,
+}: {
+  label: string
+  title: string
+}) => (
+  <Box mb={10}>
+    <Text
+      color="aqua.600"
+      fontWeight="semibold"
+      fontSize="md"
+      mb={3}
+    >
+      {label}
+    </Text>
+    <Heading size="2xl" color="ocean.900">
+      {title}
+    </Heading>
+  </Box>
+)
+
 const Objectives = () => (
   <Box id="objectives" mb={{ base: 16, md: 24 }}>
-    <Stack gap={6} mb={10}>
-      <Text
-        textTransform="uppercase"
-        letterSpacing="0.3em"
-        color="aqua.500"
-        fontSize="sm"
-      >
-        Key Objectives
-      </Text>
-      <Heading size="xl">What SAFE-BS2BKS aims to achieve.</Heading>
-    </Stack>
+    <SectionHeader label="Key Objectives" title="What SAFE-BS2BKS aims to achieve." />
     <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={6}>
       {objectiveItems.map((item) => (
         <Box key={item.title} {...cardStyles}>
@@ -454,17 +495,7 @@ const Objectives = () => (
 
 const Outputs = () => (
   <Box id="outputs" mb={{ base: 16, md: 24 }}>
-    <Stack gap={6} mb={10}>
-      <Text
-        textTransform="uppercase"
-        letterSpacing="0.3em"
-        color="aqua.500"
-        fontSize="sm"
-      >
-        Key Outputs
-      </Text>
-      <Heading size="xl">Tangible project results.</Heading>
-    </Stack>
+    <SectionHeader label="Key Outputs" title="Tangible project results." />
     <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
       {outputItems.map((item) => (
         <Box key={item.title} {...cardStyles}>
@@ -481,17 +512,7 @@ const Outputs = () => (
 
 const Partners = () => (
   <Box id="partners" mb={{ base: 16, md: 24 }}>
-    <Stack gap={6} mb={10}>
-      <Text
-        textTransform="uppercase"
-        letterSpacing="0.3em"
-        color="aqua.500"
-        fontSize="sm"
-      >
-        Partners
-      </Text>
-      <Heading size="xl">International coalition.</Heading>
-    </Stack>
+    <SectionHeader label="Partners" title="International coalition." />
     <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} gap={{ base: 5, md: 6 }}>
       {partners.map((partner) => (
         <Box
@@ -530,17 +551,7 @@ const Partners = () => (
 
 const Impact = () => (
   <Box id="impact" mb={{ base: 16, md: 24 }}>
-    <Stack gap={6} mb={10}>
-      <Text
-        textTransform="uppercase"
-        letterSpacing="0.3em"
-        color="aqua.500"
-        fontSize="sm"
-      >
-        Project Impact
-      </Text>
-      <Heading size="xl">Expected outcomes.</Heading>
-    </Stack>
+    <SectionHeader label="Project Impact" title="Expected outcomes." />
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
       {impacts.map((impact) => (
         <Box
@@ -561,17 +572,7 @@ const Impact = () => (
 
 const Contacts = () => (
   <Box id="contacts">
-    <Stack gap={6} mb={10}>
-      <Text
-        textTransform="uppercase"
-        letterSpacing="0.3em"
-        color="aqua.500"
-        fontSize="sm"
-      >
-        Contacts
-      </Text>
-      <Heading size="xl">Get in touch.</Heading>
-    </Stack>
+    <SectionHeader label="Contacts" title="Get in touch." />
     <Box
       bg="white"
       borderRadius="3xl"
@@ -661,8 +662,20 @@ export default function Home() {
         <Box as="main" bg="slate.50" color="slate.900">
           <Container maxW="6xl" py={{ base: 16, md: 24 }}>
             <About />
+
+            <PhotoBanner
+              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=70"
+              alt="Container ship at sea"
+            />
+
             <Objectives />
             <Outputs />
+
+            <PhotoBanner
+              src="https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=1600&q=70"
+              alt="Cargo ship in port"
+            />
+
             <Partners />
             <Impact />
             <Contacts />
