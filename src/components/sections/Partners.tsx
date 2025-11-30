@@ -1,6 +1,7 @@
 import Image from "next/image"
+import NextLink from "next/link"
 import { useTranslation } from "next-i18next"
-import { Box, BoxProps, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
+import { Box, BoxProps, Flex, Heading, LinkBox, LinkOverlay, SimpleGrid, Text } from "@chakra-ui/react"
 import { SectionHeader } from "../ui"
 
 const cardStyles: BoxProps = {
@@ -13,12 +14,42 @@ const cardStyles: BoxProps = {
 }
 
 const partnerKeys = [
-  { key: "helcom", logo: "/partners/helcom.png", flag: "eu" },
-  { key: "aarhus", logo: "/partners/aarhus.svg", flag: "dk" },
-  { key: "liae", logo: "/partners/lhei.svg", flag: "lv" },
-  { key: "ukrsces", logo: "/partners/ukrsces.png", flag: "ua" },
-  { key: "imb", logo: "/partners/imb_nasu.png", flag: "ua" },
-  { key: "icsa", logo: "/partners/icsanaas.png", flag: "ua" },
+  {
+    key: "helcom",
+    logo: "/partners/helcom.png",
+    flag: "eu",
+    link: "https://helcom.fi",
+  },
+  {
+    key: "aarhus",
+    logo: "/partners/aarhus.svg",
+    flag: "dk",
+    link: "https://international.au.dk",
+  },
+  {
+    key: "liae",
+    logo: "/partners/lhei.svg",
+    flag: "lv",
+    link: "https://lhei.lv/en/",
+  },
+  {
+    key: "ukrsces",
+    logo: "/partners/ukrsces.png",
+    flag: "ua",
+    link: "https://sea.gov.ua",
+  },
+  {
+    key: "imb",
+    logo: "/partners/imb_nasu.png",
+    flag: "ua",
+    link: "http://www.imb.odessa.ua",
+  },
+  {
+    key: "icsa",
+    logo: "/partners/icsanaas.png",
+    flag: "ua",
+    link: "https://icsanaas.com.ua",
+  },
 ]
 
 const FlagIcon = ({ code }: { code: string }) => (
@@ -80,12 +111,20 @@ export const Partners = () => {
         {partnerKeys.map((partner) => {
           const name = t(`partners.items.${partner.key}.name`)
           return (
-            <Box
+            <LinkBox
+              as="article"
               key={partner.key}
               {...cardStyles}
               display="flex"
               flexDirection="column"
               gap={{ base: 2, md: 4 }}
+              cursor="pointer"
+              transition="all 0.2s"
+              _hover={{
+                transform: "translateY(-4px)",
+                boxShadow: "0 32px 64px rgba(9, 34, 52, 0.12)",
+                borderColor: "aqua.200",
+              }}
             >
               <Flex
                 align="center"
@@ -103,13 +142,20 @@ export const Partners = () => {
                 </Box>
               </Flex>
               <Heading size={{ base: "xs", md: "md" }} mb={0}>
-                {name}
+                <LinkOverlay
+                  as={NextLink}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {name}
+                </LinkOverlay>
               </Heading>
               <Text color="slate.500" fontSize={{ base: "xs", md: "sm" }}>
                 <FlagIcon code={partner.flag} />
                 {t(`partners.items.${partner.key}.country`)}
               </Text>
-            </Box>
+            </LinkBox>
           )
         })}
       </SimpleGrid>
