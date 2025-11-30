@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useTranslation } from "next-i18next";
@@ -26,8 +26,18 @@ const navLinks = [
 export const Hero = () => {
   const { t } = useTranslation("common");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -39,8 +49,9 @@ export const Hero = () => {
         left={0}
         right={0}
         zIndex={100}
-        bg="rgba(18, 50, 73, 0.8)"
-        backdropFilter="blur(12px)"
+        bg={isScrolled || mobileMenuOpen ? "rgba(18, 50, 73, 0.8)" : "transparent"}
+        backdropFilter={isScrolled || mobileMenuOpen ? "blur(12px)" : "none"}
+        transition="all 0.3s ease"
       >
         <Container maxW="6xl" px={{ base: 4, md: 6 }}>
           <Flex
@@ -114,6 +125,9 @@ export const Hero = () => {
                 size="sm"
                 _hover={{ bg: "whiteAlpha.200" }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                bg={
+                  !isScrolled && !mobileMenuOpen ? "transparent" : undefined
+                }
               >
                 <GoogleIcon
                   name={mobileMenuOpen ? "close" : "menu"}
@@ -135,7 +149,7 @@ export const Hero = () => {
         right={0}
         zIndex={99}
         bg="rgba(18, 50, 73, 0.8)"
-        backdropFilter="blur(16px)"
+        backdropFilter="blur(12px)"
       >
         <Container maxW="6xl" px={4} py={3}>
           <Flex gap={2} flexWrap="wrap" justify="center">
@@ -166,6 +180,9 @@ export const Hero = () => {
         overflow="hidden"
         bgGradient="linear(135deg, ocean.900, aqua.800)"
         pt={{ base: "70px", md: "80px" }}
+        minH="100vh"
+        display="flex"
+        alignItems="center"
       >
         <Box
           position="absolute"
@@ -191,6 +208,15 @@ export const Hero = () => {
               textAlign={{ base: "center", md: "left" }}
               align={{ base: "center", md: "flex-start" }}
             >
+              <Box mb={2}>
+                <Image
+                  src="/logo.png"
+                  alt="Council of the Baltic Sea States logo"
+                  width={200}
+                  height={80}
+                  style={{ height: "auto", width: "auto", maxWidth: "180px" }}
+                />
+              </Box>
               <Text
                 fontSize={{ base: "xs", md: "sm" }}
                 textTransform="uppercase"
