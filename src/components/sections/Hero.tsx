@@ -18,6 +18,7 @@ import { GoogleIcon, LanguageSwitcher } from "../ui";
 
 const navLinks = [
   { id: "about", key: "about" },
+  { id: "objectives", key: "objectives" },
   { id: "partners", key: "partners" },
   { id: "outputs", key: "results" },
   { id: "contacts", key: "contacts" },
@@ -49,7 +50,9 @@ export const Hero = () => {
         left={0}
         right={0}
         zIndex={100}
-        bg={isScrolled || mobileMenuOpen ? "rgba(18, 50, 73, 0.8)" : "transparent"}
+        bg={
+          isScrolled || mobileMenuOpen ? "rgba(18, 50, 73, 0.8)" : "transparent"
+        }
         backdropFilter={isScrolled || mobileMenuOpen ? "blur(12px)" : "none"}
         transition="all 0.3s ease"
       >
@@ -61,7 +64,13 @@ export const Hero = () => {
             gap={{ base: 2, md: 4 }}
           >
             {/* Logo */}
-            <HStack gap={{ base: 2, md: 4 }} align="center">
+            <HStack
+              gap={{ base: 2, md: 4 }}
+              align="center"
+              as="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              cursor="pointer"
+            >
               <Image
                 src="/logo.png"
                 alt="Council of the Baltic Sea States logo"
@@ -125,9 +134,7 @@ export const Hero = () => {
                 size="sm"
                 _hover={{ bg: "whiteAlpha.200" }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                bg={
-                  !isScrolled && !mobileMenuOpen ? "transparent" : undefined
-                }
+                bg={!isScrolled && !mobileMenuOpen ? "transparent" : undefined}
               >
                 <GoogleIcon
                   name={mobileMenuOpen ? "close" : "menu"}
@@ -137,7 +144,6 @@ export const Hero = () => {
             </HStack>
           </Flex>
         </Container>
-
       </Box>
 
       {/* Mobile Menu Dropdown - separate for backdrop blur */}
@@ -208,13 +214,12 @@ export const Hero = () => {
               textAlign={{ base: "center", md: "left" }}
               align={{ base: "center", md: "flex-start" }}
             >
-              <Box mb={2}>
+              <Box mb={8}>
                 <Image
                   src="/logo.png"
                   alt="Council of the Baltic Sea States logo"
-                  width={200}
-                  height={80}
-                  style={{ height: "auto", width: "auto", maxWidth: "180px" }}
+                  width={300}
+                  height={220}
                 />
               </Box>
               <Text
@@ -250,14 +255,25 @@ export const Hero = () => {
               >
                 <Button
                   asChild
-                  colorScheme="cyan"
-                  bg="white"
-                  color="ocean.900"
+                  variant="outline"
+                  borderColor="whiteAlpha.600"
+                  color="white"
                   borderRadius="pill"
-                  _hover={{ bg: "aqua.100" }}
+                  _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
                   size={{ base: "xs", md: "md" }}
                 >
                   <NextLink href="#about">{t("nav.about")}</NextLink>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  borderColor="whiteAlpha.600"
+                  color="white"
+                  borderRadius="pill"
+                  _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
+                  size={{ base: "xs", md: "md" }}
+                >
+                  <NextLink href="#objectives">{t("nav.objectives")}</NextLink>
                 </Button>
                 <Button
                   asChild
