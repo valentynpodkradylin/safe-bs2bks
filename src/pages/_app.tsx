@@ -1,8 +1,4 @@
-import {
-  ChakraProvider,
-  createSystem,
-  defaultConfig,
-} from "@chakra-ui/react";
+import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
 import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import { Space_Grotesk, Inter } from "next/font/google";
