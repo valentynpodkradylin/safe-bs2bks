@@ -43,6 +43,7 @@ export default function Home() {
             <PhotoBanner
               src="https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=1600&q=70"
               alt="Ocean waves and marine environment"
+              parallax
             />
 
             <Partners />

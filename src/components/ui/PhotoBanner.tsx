@@ -4,9 +4,15 @@ interface PhotoBannerProps {
   src: string;
   alt: string;
   overlay?: boolean;
+  parallax?: boolean;
 }
 
-export const PhotoBanner = ({ src, alt, overlay = true }: PhotoBannerProps) => (
+export const PhotoBanner = ({
+  src,
+  alt,
+  overlay = true,
+  parallax = false,
+}: PhotoBannerProps) => (
   <Box
     position="relative"
     h={{ base: "150px", sm: "200px", md: "280px" }}
@@ -21,8 +27,20 @@ export const PhotoBanner = ({ src, alt, overlay = true }: PhotoBannerProps) => (
       position="absolute"
       inset={0}
       backgroundImage={`url('${src}')`}
-      backgroundSize="cover"
-      backgroundPosition="center"
+      className={parallax ? "parallax-bg" : undefined}
+      style={
+        parallax
+          ? {
+              backgroundAttachment: "fixed",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }
+          : {
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }
+      }
     />
     {overlay && (
       <Box
