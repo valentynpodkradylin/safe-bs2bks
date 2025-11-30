@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import { appWithTranslation } from "next-i18next";
 import { AppProps } from "next/app";
 import { Space_Grotesk, Inter } from "next/font/google";
+import { useEffect } from "react";
 import "@/styles/globals.css";
 
 const headingFont = Space_Grotesk({
@@ -74,6 +75,12 @@ const customSystem = createSystem(defaultConfig, {
 });
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
+
   return (
     <div className={`${headingFont.variable} ${bodyFont.variable}`}>
       <ChakraProvider value={customSystem}>
