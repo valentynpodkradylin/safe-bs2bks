@@ -33,16 +33,16 @@ export default function Home() {
             <About />
 
             <PhotoBanner
-              src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=70"
-              alt="Container ship at sea"
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=70"
+              alt="Underwater marine ecosystem"
             />
 
             <Objectives />
             <Outputs />
 
             <PhotoBanner
-              src="https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=1600&q=70"
-              alt="Cargo ship in port"
+              src="https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=1600&q=70"
+              alt="Ocean waves and marine environment"
             />
 
             <Partners />

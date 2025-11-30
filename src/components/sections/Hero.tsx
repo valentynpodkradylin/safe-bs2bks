@@ -34,10 +34,11 @@ export const Hero = () => {
       <Box
         position="absolute"
         inset={0}
-        opacity={0.2}
-        backgroundImage="url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=70')"
-        backgroundSize="cover"
-        backgroundPosition="center"
+        opacity={0.3}
+        className="parallax-bg"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1600&q=70')",
+        }}
       />
       <Box position="relative" zIndex={1}>
         <Container maxW="6xl" py={{ base: 8, md: 12 }}>
