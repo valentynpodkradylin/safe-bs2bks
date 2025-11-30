@@ -484,33 +484,58 @@ const About = () => (
           Sea.
         </Text>
       </Stack>
-      <Box>
-        <Stack gap={4}>
-          {keyPhrases.map((phrase) => (
+      <Box
+        bg="white"
+        borderRadius="2xl"
+        p={6}
+        border="1px solid"
+        borderColor="slate.100"
+        boxShadow="0 24px 50px rgba(9, 34, 52, 0.06)"
+      >
+        <Stack gap={0} position="relative">
+          {/* Vertical connector line */}
+          <Box
+            position="absolute"
+            left="15px"
+            top="20px"
+            bottom="20px"
+            w="2px"
+            bg="aqua.200"
+            borderRadius="full"
+          />
+          {keyPhrases.map((phrase, index) => (
             <Flex
               key={phrase}
               align="center"
-              bg="white"
-              borderRadius="xl"
-              boxShadow="0 20px 60px rgba(13, 46, 66, 0.08)"
-              px={4}
-              py={3}
-              gap={4}
+              py={4}
+              gap={5}
+              position="relative"
+              _notFirst={{
+                borderTop: "1px dashed",
+                borderColor: "slate.100",
+              }}
             >
               <Box
-                w={10}
-                h={10}
+                w={8}
+                h={8}
                 borderRadius="full"
-                bg="aqua.100"
+                bg="aqua.500"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                color="aqua.800"
+                color="white"
+                fontSize="sm"
                 fontWeight="bold"
+                flexShrink={0}
+                position="relative"
+                zIndex={1}
+                boxShadow="0 2px 8px rgba(40, 187, 223, 0.4)"
               >
-                ●
+                {index + 1}
               </Box>
-              <Text fontWeight="medium">{phrase}</Text>
+              <Text fontWeight="medium" color="slate.700">
+                {phrase}
+              </Text>
             </Flex>
           ))}
         </Stack>
