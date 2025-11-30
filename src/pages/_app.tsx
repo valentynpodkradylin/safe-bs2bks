@@ -78,6 +78,7 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname);
+      window.scrollTo(0, 0);
     }
   }, []);
 
