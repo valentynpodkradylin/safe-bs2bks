@@ -584,43 +584,92 @@ const Outputs = () => (
         </Text>
         <Heading size="xl">A four-step process.</Heading>
       </Stack>
-      <Stack
+      <Box
         bg="white"
         borderRadius="3xl"
         p={{ base: 6, md: 10 }}
         border="1px solid"
         borderColor="slate.100"
-        gap={0}
       >
-        {approachSteps.map((step, index) => (
-          <Flex
-            key={step.title}
-            py={6}
-            direction={{ base: "column", md: "row" }}
-            gap={4}
-          >
-            <HStack gap={3} minW={{ base: "auto", md: "200px" }}>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          gap={{ base: 0, md: 4 }}
+        >
+          {approachSteps.map((step, index) => (
+            <Flex
+              key={step.title}
+              flex="1"
+              direction="column"
+              align={{ base: "flex-start", md: "center" }}
+              position="relative"
+              pb={{ base: 8, md: 0 }}
+              _last={{ pb: 0 }}
+            >
+              {/* Connector line - horizontal on desktop, vertical on mobile */}
+              {index < approachSteps.length - 1 && (
+                <>
+                  {/* Desktop horizontal line */}
+                  <Box
+                    display={{ base: "none", md: "block" }}
+                    position="absolute"
+                    top="24px"
+                    left="calc(50% + 28px)"
+                    right="calc(-50% + 28px)"
+                    h="2px"
+                    bg="aqua.200"
+                  />
+                  {/* Mobile vertical line */}
+                  <Box
+                    display={{ base: "block", md: "none" }}
+                    position="absolute"
+                    left="23px"
+                    top="56px"
+                    bottom="0"
+                    w="2px"
+                    bg="aqua.200"
+                  />
+                </>
+              )}
+
+              {/* Step circle */}
               <Box
-                w={10}
-                h={10}
+                w={12}
+                h={12}
                 borderRadius="full"
-                bg="aqua.100"
-                color="aqua.700"
+                bg="aqua.500"
+                color="white"
                 fontWeight="bold"
+                fontSize="lg"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
+                position="relative"
+                zIndex={1}
+                boxShadow="0 4px 14px rgba(40, 187, 223, 0.4)"
+                mb={4}
               >
                 {index + 1}
               </Box>
-              <Heading size="md">{step.title}</Heading>
-            </HStack>
-            <Text color="slate.600" flex="1">
-              {step.detail}
-            </Text>
-          </Flex>
-        ))}
-      </Stack>
+
+              {/* Content */}
+              <Stack
+                gap={2}
+                textAlign={{ base: "left", md: "center" }}
+                pl={{ base: 16, md: 0 }}
+                mt={{ base: -14, md: 0 }}
+                px={{ md: 2 }}
+              >
+                <Heading size="md" color="ocean.900">
+                  {step.title}
+                </Heading>
+                <Text color="slate.500" fontSize="sm" lineHeight="tall">
+                  {step.detail}
+                </Text>
+              </Stack>
+            </Flex>
+          ))}
+        </Flex>
+      </Box>
     </Box>
   </>
 )
