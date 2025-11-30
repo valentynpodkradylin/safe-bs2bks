@@ -5,8 +5,8 @@ import { SectionHeader } from "../ui"
 
 const cardStyles: BoxProps = {
   bg: "white",
-  borderRadius: "2xl",
-  p: 6,
+  borderRadius: { base: "xl", md: "2xl" },
+  p: { base: 4, md: 6 },
   border: "1px solid",
   borderColor: "slate.100",
   boxShadow: "0 24px 50px rgba(9, 34, 52, 0.06)",
@@ -64,9 +64,9 @@ export const Partners = () => {
   const { t } = useTranslation("common")
 
   return (
-    <Box id="partners" mb={{ base: 16, md: 24 }}>
+    <Box id="partners" mb={{ base: 10, md: 24 }}>
       <SectionHeader label={t("partners.label")} title={t("partners.title")} />
-      <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} gap={{ base: 5, md: 6 }}>
+      <SimpleGrid columns={{ base: 2, lg: 3 }} gap={{ base: 3, md: 6 }}>
         {partnerKeys.map((partner) => {
           const name = t(`partners.items.${partner.key}.name`)
           return (
@@ -75,27 +75,27 @@ export const Partners = () => {
               {...cardStyles}
               display="flex"
               flexDirection="column"
-              gap={4}
+              gap={{ base: 2, md: 4 }}
             >
               <Flex
                 align="center"
                 justify="center"
                 bg="slate.50"
-                borderRadius="xl"
-                h={{ base: "90px", md: "120px" }}
+                borderRadius={{ base: "lg", md: "xl" }}
+                h={{ base: "70px", md: "120px" }}
                 border="1px dashed"
                 borderColor="slate.100"
                 overflow="hidden"
-                px={4}
+                px={{ base: 2, md: 4 }}
               >
                 <Box w="100%" h="100%" position="relative">
                   <PartnerLogo logo={partner.logo} name={name} />
                 </Box>
               </Flex>
-              <Heading size="md" mb={1}>
+              <Heading size={{ base: "xs", md: "md" }} mb={0}>
                 {name}
               </Heading>
-              <Text color="slate.500" fontSize="sm">
+              <Text color="slate.500" fontSize={{ base: "xs", md: "sm" }}>
                 {t(`partners.items.${partner.key}.country`)}
               </Text>
             </Box>

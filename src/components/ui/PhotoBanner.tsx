@@ -9,10 +9,11 @@ interface PhotoBannerProps {
 export const PhotoBanner = ({ src, alt, overlay = true }: PhotoBannerProps) => (
   <Box
     position="relative"
-    h={{ base: "200px", md: "280px" }}
-    borderRadius="3xl"
+    h={{ base: "150px", sm: "200px", md: "280px" }}
+    borderRadius={{ base: "none", lg: "2xl" }}
     overflow="hidden"
-    mb={{ base: 16, md: 24 }}
+    mb={{ base: 10, md: 24 }}
+    mx={{ base: -4, md: 0 }}
     role="img"
     aria-label={alt}
   >

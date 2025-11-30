@@ -6,11 +6,16 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({ label, title }: SectionHeaderProps) => (
-  <Box mb={10}>
-    <Text color="aqua.600" fontWeight="semibold" fontSize="md" mb={3}>
+  <Box mb={{ base: 6, md: 10 }}>
+    <Text
+      color="aqua.600"
+      fontWeight="semibold"
+      fontSize={{ base: "sm", md: "md" }}
+      mb={{ base: 2, md: 3 }}
+    >
       {label}
     </Text>
-    <Heading size="2xl" color="ocean.900">
+    <Heading size={{ base: "xl", md: "2xl" }} color="ocean.900">
       {title}
     </Heading>
   </Box>
