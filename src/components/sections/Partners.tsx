@@ -13,13 +13,23 @@ const cardStyles: BoxProps = {
 }
 
 const partnerKeys = [
-  { key: "helcom", logo: "/partners/helcom.png" },
-  { key: "aarhus", logo: "/partners/aarhus.svg" },
-  { key: "liae", logo: "/partners/lhei.svg" },
-  { key: "ukrsces", logo: "/partners/ukrsces.png" },
-  { key: "imb", logo: "/partners/imb_nasu.png" },
-  { key: "icsa", logo: "/partners/icsanaas.png" },
+  { key: "helcom", logo: "/partners/helcom.png", flag: "eu" },
+  { key: "aarhus", logo: "/partners/aarhus.svg", flag: "dk" },
+  { key: "liae", logo: "/partners/lhei.svg", flag: "lv" },
+  { key: "ukrsces", logo: "/partners/ukrsces.png", flag: "ua" },
+  { key: "imb", logo: "/partners/imb_nasu.png", flag: "ua" },
+  { key: "icsa", logo: "/partners/icsanaas.png", flag: "ua" },
 ]
+
+const FlagIcon = ({ code }: { code: string }) => (
+  <Image
+    src={`https://flagcdn.com/16x12/${code}.png`}
+    alt=""
+    width={16}
+    height={12}
+    style={{ display: "inline-block", verticalAlign: "middle", marginRight: "4px" }}
+  />
+)
 
 const getInitials = (name: string) =>
   name
@@ -96,6 +106,7 @@ export const Partners = () => {
                 {name}
               </Heading>
               <Text color="slate.500" fontSize={{ base: "xs", md: "sm" }}>
+                <FlagIcon code={partner.flag} />
                 {t(`partners.items.${partner.key}.country`)}
               </Text>
             </Box>

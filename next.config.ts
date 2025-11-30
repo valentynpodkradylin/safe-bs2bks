@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
     defaultLocale: "en",
     locales: ["en", "uk"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
