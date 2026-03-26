@@ -72,22 +72,30 @@ export const Hero = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               cursor="pointer"
             >
-              <Image
-                src="/logo.png"
-                alt="Council of the Baltic Sea States logo"
-                width={120}
-                height={40}
-                style={{ height: "auto", width: "auto", maxWidth: "100px" }}
-              />
-              <Text
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="bold"
-                letterSpacing="0.05em"
-                color="white"
-                display={{ base: "none", sm: "block" }}
+              <Box
+                bg="rgba(255, 255, 255, 0.8)"
+                border="1px solid"
+                borderColor="whiteAlpha.700"
+                backdropFilter="blur(14px)"
+                borderRadius="xl"
+                px={2}
+                py={1}
+                boxShadow="0 8px 18px rgba(0, 0, 0, 0.24)"
               >
-                SAFE-BS2BKS
-              </Text>
+                <Image
+                  src="/logos/safe-bs2bks-logo-mini.png"
+                  alt="SAFE-BS2BKS mini logo"
+                  width={128}
+                  height={44}
+                  style={{
+                    height: "auto",
+                    width: "auto",
+                    maxWidth: "116px",
+                    filter:
+                      "contrast(1.12) saturate(1.1) drop-shadow(0 2px 5px rgba(0,0,0,0.2))",
+                  }}
+                />
+              </Box>
             </HStack>
 
             {/* Navigation Links - Desktop */}
@@ -151,7 +159,7 @@ export const Hero = () => {
       <Box
         display={{ base: mobileMenuOpen ? "block" : "none", md: "none" }}
         position="fixed"
-        top="57px"
+        top="109px"
         left={0}
         right={0}
         zIndex={99}
@@ -186,8 +194,9 @@ export const Hero = () => {
         position="relative"
         overflow="hidden"
         bgGradient="linear(135deg, ocean.900, aqua.800)"
-        pt={{ base: "70px", md: "80px" }}
+        pt={{ base: "70px", md: "140px" }}
         minH="100vh"
+        maxH="100vh"
         display="flex"
         alignItems="center"
       >
@@ -215,14 +224,130 @@ export const Hero = () => {
               textAlign={{ base: "center", md: "left" }}
               align={{ base: "center", md: "flex-start" }}
             >
-              <Box mb={8}>
-                <Image
-                  src="/logo.png"
-                  alt="Council of the Baltic Sea States logo"
-                  width={300}
-                  height={220}
-                />
-              </Box>
+              <Stack gap={4} mb={4} w="full" align={{ base: "center", md: "flex-start" }}>
+                <Box
+                  display={{ base: "flex", md: "none" }}
+                  bg="rgba(255, 255, 255, 0.88)"
+                  border="1px solid"
+                  borderColor="whiteAlpha.700"
+                  backdropFilter="blur(24px)"
+                  borderRadius="2xl"
+                  px={{ base: 5, sm: 6 }}
+                  py={{ base: 4, sm: 5 }}
+                  boxShadow="0 12px 28px rgba(0, 0, 0, 0.28)"
+                >
+                  <Image
+                    src="/logos/safe-bs2bks-logo.png"
+                    alt="SAFE-BS2BKS logo"
+                    width={220}
+                    height={76}
+                    style={{
+                      height: "auto",
+                      width: "auto",
+                      maxWidth: "100%",
+                      filter:
+                        "contrast(1.12) saturate(1.12) drop-shadow(0 2px 6px rgba(0,0,0,0.2))",
+                    }}
+                  />
+                </Box>
+
+                <Stack
+                  direction={{ base: "column", md: "row" }}
+                  align="center"
+                  justify={{ base: "center", md: "flex-start" }}
+                  gap={{ base: 3, md: 4 }}
+                  w="full"
+                >
+                  <Box
+                    display={{ base: "none", md: "flex" }}
+                    bg="rgba(255, 255, 255, 0.88)"
+                    border="1px solid"
+                    borderColor="whiteAlpha.700"
+                    backdropFilter="blur(24px)"
+                    borderRadius="2xl"
+                    px={5}
+                    py={4}
+                    boxShadow="0 12px 28px rgba(0, 0, 0, 0.28)"
+                  >
+                    <Image
+                      src="/logos/safe-bs2bks-logo.png"
+                      alt="SAFE-BS2BKS logo"
+                      width={220}
+                      height={76}
+                      style={{
+                        height: "auto",
+                        width: "auto",
+                        maxWidth: "100%",
+                        filter:
+                          "contrast(1.12) saturate(1.12) drop-shadow(0 2px 6px rgba(0,0,0,0.2))",
+                      }}
+                    />
+                  </Box>
+
+                  <Box
+                    display={{ base: "none", md: "block" }}
+                    w="1px"
+                    h="56px"
+                    bgGradient="linear(to-b, transparent, whiteAlpha.700, transparent)"
+                  />
+
+                  <HStack
+                    gap={{ base: 2, md: 4 }}
+                    flexWrap={{ base: "nowrap", md: "wrap" }}
+                    justify="center"
+                    w="full"
+                  >
+                    <Box
+                      bg="rgba(255, 255, 255, 0.12)"
+                      border="1px solid"
+                      borderColor="whiteAlpha.300"
+                      backdropFilter="blur(24px)"
+                      borderRadius="2xl"
+                      px={{ base: 3, md: 5 }}
+                      py={{ base: 3, md: 4 }}
+                      boxShadow="0 12px 28px rgba(0, 0, 0, 0.2)"
+                      w={{ base: "50%", md: "auto" }}
+                      maxW={{ base: "170px", md: "none" }}
+                    >
+                      <Image
+                        src="/logos/cbss-logo.png"
+                        alt="BALTIC Sea States logo"
+                        width={180}
+                        height={60}
+                        style={{ height: "auto", width: "100%", maxWidth: "100%" }}
+                      />
+                    </Box>
+
+                    <Box
+                      display={{ base: "none", md: "block" }}
+                      w="1px"
+                      h="40px"
+                      bgGradient="linear(to-b, transparent, whiteAlpha.700, transparent)"
+                    />
+
+                    <Box
+                      bg="rgba(255, 255, 255, 0.12)"
+                      border="1px solid"
+                      borderColor="whiteAlpha.300"
+                      backdropFilter="blur(24px)"
+                      borderRadius="2xl"
+                      px={{ base: 3, md: 5 }}
+                      py={{ base: 3, md: 4 }}
+                      boxShadow="0 12px 28px rgba(0, 0, 0, 0.2)"
+                      w={{ base: "50%", md: "auto" }}
+                      maxW={{ base: "170px", md: "none" }}
+                    >
+                      <Image
+                        src="/logos/project-support-facility-logo.png"
+                        alt="Project Support Facility logo"
+                        width={180}
+                        height={60}
+                        style={{ height: "auto", width: "100%", maxWidth: "100%" }}
+                      />
+                    </Box>
+                  </HStack>
+                </Stack>
+              </Stack>
               <Text
                 fontSize={{ base: "xs", md: "sm" }}
                 textTransform="uppercase"
