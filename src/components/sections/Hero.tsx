@@ -19,6 +19,7 @@ import { GoogleIcon, LanguageSwitcher } from "../ui";
 const navLinks = [
   { id: "about", key: "about" },
   { id: "objectives", key: "objectives" },
+  { id: "news", key: "news" },
   { id: "partners", key: "partners" },
   { id: "outputs", key: "results" },
   { id: "contacts", key: "contacts" },
@@ -274,6 +275,17 @@ export const Hero = () => {
                   size={{ base: "xs", md: "md" }}
                 >
                   <NextLink href="#objectives">{t("nav.objectives")}</NextLink>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  borderColor="whiteAlpha.600"
+                  color="white"
+                  borderRadius="pill"
+                  _hover={{ bg: "whiteAlpha.200", borderColor: "white" }}
+                  size={{ base: "xs", md: "md" }}
+                >
+                  <NextLink href="#news">{t("nav.news")}</NextLink>
                 </Button>
                 <Button
                   asChild
