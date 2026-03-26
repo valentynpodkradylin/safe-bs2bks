@@ -78,6 +78,7 @@ export default function Home({
             <PhotoBanner
               src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=70"
               alt="Underwater marine ecosystem"
+              parallax
             />
 
             <Objectives />
@@ -91,6 +92,14 @@ export default function Home({
             />
 
             <Partners />
+
+            <PhotoBanner
+              src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1800&q=75"
+              alt="Marine research and underwater monitoring in the Black Sea region"
+              parallax
+              parallaxDirection="diagonal"
+            />
+
             <Impact />
             <Contacts />
           </Container>
