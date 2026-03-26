@@ -1,6 +1,7 @@
 export { Hero } from "./Hero"
 export { About } from "./About"
 export { Objectives } from "./Objectives"
+export { News } from "./News"
 export { Outputs } from "./Outputs"
 export { Partners } from "./Partners"
 export { Impact } from "./Impact"

@@ -14,7 +14,7 @@
   },
   "about": {
     "label": "About the project",
-    "title": "SAFE Actions for Environment – Baltic Solutions to the Black Sea",
+    "title": "SAFE Actions for Environment - Baltic Solutions to the Black Sea",
     "sections": {
       "goal": {
         "title": "Project Goal",
@@ -52,7 +52,7 @@
       },
       "plan": {
         "title": "Joint Action Plan",
-        "description": "Development of a Joint Baltic–Black Sea Action Plan."
+        "description": "Development of a Joint Baltic-Black Sea Action Plan."
       },
       "communication": {
         "title": "Communication",
@@ -148,7 +148,27 @@
   },
   "footer": {
     "name": "SAFE-BS2BKS",
-    "description": "SAFE Actions for Environment – Baltic Solutions to the Black Sea"
+    "description": "SAFE Actions for Environment - Baltic Solutions to the Black Sea"
+  },
+  "news": {
+    "label": "Project News",
+    "title": "International Conference in Stockholm: integrating Ukrainian experience.",
+    "items": {
+      "kickoff": {
+        "date": "10-12 March 2026, Stockholm",
+        "title": "MUNIMAP - HELCOM IC EG Submerged - MUNI-RISK - SAFE-BS2BKS Project Meeting",
+        "description": "Stockholm hosted an international information seminar for policy stakeholders focused on risk assessment, monitoring, and remediation of sea-dumped and submerged munitions. Participants included HELCOM, the Council of the Baltic Sea States (CBSS), and partners from MUNIMAP, MUNI-RISK, and SAFE-BS2BKS. Ukraine was represented by experts from the Institute of Climate-Smart Agriculture, the Ukrainian Scientific Centre of Ecology of the Sea, and the Institute of Marine Biology of the National Academy of Sciences of Ukraine."
+      },
+      "sampling": {
+        "date": "SAFE-BS2BKS Session: Ukraine's experience",
+        "title": "Climate-driven risk factors and scientific assessment for the Black Sea",
+        "description": "During the panel \"SAFE-BS2BKS Session on the experiences from Ukraine\", experts presented findings on how climate change amplifies risks associated with submerged munitions in the Black Sea. Special attention was given to water temperature increase, hydrodynamic change, and bottom sediment degradation as drivers of contaminant mobilisation. Technical sessions also covered BATs/BEPs, criteria for remediation prioritisation, and improvements to regulatory and administrative frameworks."
+      },
+      "workshop": {
+        "date": "Policy stakeholder briefing",
+        "title": "CBSS coordination and integration of Ukrainian expertise",
+        "description": "The final day focused on dialogue with ambassadors of CBSS member states and Ukraine's Deputy Ambassador to Sweden, Dmytro Husiev. Consortium partners highlighted priorities for further cooperation: ecotoxicological modelling, systematic monitoring, Black Sea hydrological specifics, and the role of biological indicators in long-term impact assessment. The event confirmed strong international interest in harmonised approaches and the importance of integrating Ukrainian experience into European policy development on marine munitions risk management."
+      }
+    }
   }
 }
-

@@ -7,6 +7,7 @@ import {
   Hero,
   About,
   Objectives,
+  News,
   Outputs,
   Partners,
   Impact,
@@ -38,6 +39,7 @@ export default function Home() {
                       />
 
             <Objectives />
+            <News />
             <Outputs />
 
             <PhotoBanner
