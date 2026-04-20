@@ -8,6 +8,7 @@ import {
   About,
   Objectives,
   News,
+  TrainingSession,
   Outputs,
   Partners,
   Impact,
@@ -83,6 +84,7 @@ export default function Home({
 
             <Objectives />
             <News />
+            <TrainingSession />
             <Outputs />
 
             <PhotoBanner

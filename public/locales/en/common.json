@@ -171,5 +171,38 @@
         "description": "The final day focused on dialogue with ambassadors of CBSS member states and Ukraine's Deputy Ambassador to Sweden, Dmytro Husiev. Consortium partners highlighted priorities for further cooperation: ecotoxicological modelling, systematic monitoring, Black Sea hydrological specifics, and the role of biological indicators in long-term impact assessment. The event confirmed strong international interest in harmonised approaches and the importance of integrating Ukrainian experience into European policy development on marine munitions risk management."
       }
     }
+  },
+  "trainingSession": {
+    "label": "Training Session",
+    "title": "Sustainable Actions for the Environment: Baltic solutions for the Black Sea",
+    "meta": {
+      "date": "17 April 2026",
+      "location": "Odesa, Ukraine",
+      "format": "Hybrid format"
+    },
+    "intro": [
+      "An expert session and discussion focused on the environmental impact of submerged munitions and risk management priorities within the international SAFE-BS2BKS initiative.",
+      "The event brought together international and Ukrainian experts to present modern monitoring, assessment, and mitigation approaches for environmental threats associated with underwater munitions."
+    ],
+    "speakers": {
+      "grafov": {
+        "name": "Andrii Grafov",
+        "role": "HELCOM Project Coordinator, Doctor of Chemical Sciences, Professor",
+        "summary": "Presented Baltic solutions for environmental safety in the Black Sea and outlined practical Baltic experience in identifying, assessing, and managing risks related to submerged munitions."
+      },
+      "skudra": {
+        "name": "Maris Skudra",
+        "role": "Latvian Institute of Aquatic Ecology",
+        "summary": "Described practical steps for building a submerged munitions management system from scratch, including institutional setup, monitoring architecture, and interagency coordination."
+      },
+      "sanderson": {
+        "name": "Hans Sanderson",
+        "role": "Professor, Aarhus University (Denmark)",
+        "summary": "Presented quantitative risk-assessment methodologies for prioritising underwater and submerged munitions and ranking objects by environmental hazard level."
+      }
+    },
+    "galleryAlt": "SAFE-BS2BKS training session photo",
+    "conclusionTitle": "Key discussion outcome",
+    "conclusion": "Participants stressed the need to strengthen international cooperation, improve monitoring systems, and implement science-based approaches to managing environmental risks associated with submerged munitions in the Black Sea region."
   }
 }
