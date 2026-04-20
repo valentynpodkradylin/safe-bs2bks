@@ -174,35 +174,38 @@
   },
   "trainingSession": {
     "label": "Training Session",
-    "title": "Sustainable Actions for the Environment: Baltic solutions for the Black Sea",
+    "title": "Sustainable Actions for the Environment Baltic Region Solutions for the Black Sea SAFE-BS2BKS",
+    "eventLine": "Training",
     "meta": {
       "date": "17 April 2026",
       "location": "Odesa, Ukraine",
       "format": "Hybrid format"
     },
     "intro": [
-      "An expert session and discussion focused on the environmental impact of submerged munitions and risk management priorities within the international SAFE-BS2BKS initiative.",
-      "The event brought together international and Ukrainian experts to present modern monitoring, assessment, and mitigation approaches for environmental threats associated with underwater munitions."
+      "On April 17, 2026, in Odesa, in a hybrid format, an expert session and discussion were held, focused on assessing the environmental impact of submerged munitions and defining risk management priorities within the framework of the international SAFE-BS2BKS initiative.",
+      "The session brought together leading international and Ukrainian experts who presented modern approaches to monitoring, assessment, and mitigation of environmental threats associated with underwater munitions."
     ],
+    "speakersTitle": "Speakers and key statements",
     "speakers": {
       "grafov": {
         "name": "Andrii Grafov",
         "role": "HELCOM Project Coordinator, Doctor of Chemical Sciences, Professor",
-        "summary": "Presented Baltic solutions for environmental safety in the Black Sea and outlined practical Baltic experience in identifying, assessing, and managing risks related to submerged munitions."
+        "summary": "In his presentation Baltic Solutions for Environmental Safety of the Black Sea, outlined the experience of Baltic region countries in identifying, assessing risks, and managing submerged munitions, with emphasis on the applicability of these approaches to the Black Sea context."
       },
       "skudra": {
         "name": "Maris Skudra",
         "role": "Latvian Institute of Aquatic Ecology",
-        "summary": "Described practical steps for building a submerged munitions management system from scratch, including institutional setup, monitoring architecture, and interagency coordination."
+        "summary": "Described practical approaches to establishing a submerged munitions management system from scratch, including institutional frameworks, monitoring, and interagency coordination."
       },
       "sanderson": {
         "name": "Hans Sanderson",
         "role": "Professor, Aarhus University (Denmark)",
-        "summary": "Presented quantitative risk-assessment methodologies for prioritising underwater and submerged munitions and ranking objects by environmental hazard level."
+        "summary": "Presented methodological approaches for prioritizing underwater and submerged munitions based on quantitative risk assessment, enabling effective ranking of objects according to their environmental hazard level."
       }
     },
+    "galleryTitle": "Session photo highlights",
     "galleryAlt": "SAFE-BS2BKS training session photo",
-    "conclusionTitle": "Key discussion outcome",
-    "conclusion": "Participants stressed the need to strengthen international cooperation, improve monitoring systems, and implement science-based approaches to managing environmental risks associated with submerged munitions in the Black Sea region."
+    "conclusionTitle": "Discussion of the training packages",
+    "conclusion": "As a result of the discussion of the training packages, participants emphasized the need to strengthen international cooperation, enhance monitoring systems, and implement science-based approaches to managing environmental risks associated with submerged munitions in the Black Sea region."
   }
 }

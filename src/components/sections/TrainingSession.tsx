@@ -3,11 +3,7 @@ import { useTranslation } from "next-i18next"
 import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
 import { SectionHeader } from "../ui"
 
-const speakers = [
-  { key: "grafov", image: "/training-session-odessa-1.jpg" },
-  { key: "skudra", image: "/training-session-odessa-2.jpg" },
-  { key: "sanderson", image: "/training-session-odessa-3.jpg" },
-] as const
+const speakers = [{ key: "grafov" }, { key: "skudra" }, { key: "sanderson" }] as const
 
 const gallery = [
   "/training-session-odessa-1.jpg",
@@ -21,33 +17,47 @@ export const TrainingSession = () => {
 
   return (
     <Box id="training-session" mb={{ base: 10, md: 24 }}>
-      <SectionHeader
-        label={t("trainingSession.label")}
-        title={t("trainingSession.title")}
-      />
+      <SectionHeader label={t("trainingSession.label")} title={t("trainingSession.title")} />
 
       <Box
-        bg="white"
+        bg="linear-gradient(140deg, rgba(7, 35, 61, 0.04), rgba(0, 188, 212, 0.06))"
         borderRadius={{ base: "xl", md: "2xl" }}
         border="1px solid"
-        borderColor="slate.100"
+        borderColor="aqua.100"
         p={{ base: 5, md: 8 }}
-        boxShadow="0 24px 50px rgba(9, 34, 52, 0.06)"
+        boxShadow="0 18px 40px rgba(9, 34, 52, 0.07)"
         mb={{ base: 4, md: 6 }}
       >
-        <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 2, md: 4 }} mb={4}>
-          <Text fontSize={{ base: "sm", md: "md" }} color="aqua.700" fontWeight="semibold">
-            {t("trainingSession.meta.date")}
-          </Text>
-          <Text fontSize={{ base: "sm", md: "md" }} color="aqua.700" fontWeight="semibold">
-            {t("trainingSession.meta.location")}
-          </Text>
-          <Text fontSize={{ base: "sm", md: "md" }} color="aqua.700" fontWeight="semibold">
-            {t("trainingSession.meta.format")}
-          </Text>
+        <Text
+          color="aqua.800"
+          fontSize={{ base: "xs", md: "sm" }}
+          textTransform="uppercase"
+          letterSpacing="widest"
+          fontWeight="bold"
+          mb={3}
+        >
+          {t("trainingSession.eventLine")}
+        </Text>
+
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 2, md: 3 }} mb={4}>
+          <Box bg="whiteAlpha.900" borderRadius="lg" px={4} py={3}>
+            <Text fontSize={{ base: "sm", md: "md" }} color="aqua.700" fontWeight="semibold">
+              {t("trainingSession.meta.date")}
+            </Text>
+          </Box>
+          <Box bg="whiteAlpha.900" borderRadius="lg" px={4} py={3}>
+            <Text fontSize={{ base: "sm", md: "md" }} color="aqua.700" fontWeight="semibold">
+              {t("trainingSession.meta.location")}
+            </Text>
+          </Box>
+          <Box bg="whiteAlpha.900" borderRadius="lg" px={4} py={3}>
+            <Text fontSize={{ base: "sm", md: "md" }} color="aqua.700" fontWeight="semibold">
+              {t("trainingSession.meta.format")}
+            </Text>
+          </Box>
         </SimpleGrid>
 
-        <Flex direction="column" gap={3}>
+        <Flex direction="column" gap={4}>
           <Text color="slate.700" fontSize={{ base: "sm", md: "md" }}>
             {t("trainingSession.intro.0")}
           </Text>
@@ -57,28 +67,24 @@ export const TrainingSession = () => {
         </Flex>
       </Box>
 
-      <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 3, md: 6 }} mb={{ base: 4, md: 6 }}>
+      <Box mb={{ base: 4, md: 6 }}>
+        <Text color="aqua.800" fontSize={{ base: "xs", md: "sm" }} fontWeight="bold" mb={3}>
+          {t("trainingSession.speakersTitle")}
+        </Text>
+
+        <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 3, md: 4 }}>
         {speakers.map((speaker) => (
           <Box
             key={speaker.key}
             bg="white"
             borderRadius={{ base: "xl", md: "2xl" }}
             border="1px solid"
-            borderColor="slate.100"
-            overflow="hidden"
-            boxShadow="0 24px 50px rgba(9, 34, 52, 0.06)"
+            borderColor="slate.200"
+            boxShadow="0 12px 30px rgba(9, 34, 52, 0.06)"
+            p={{ base: 4, md: 5 }}
           >
-            <Box position="relative" h={{ base: "200px", md: "220px" }}>
-              <Image
-                src={speaker.image}
-                alt={t(`trainingSession.speakers.${speaker.key}.name`)}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectFit: "cover" }}
-              />
-            </Box>
-            <Flex direction="column" gap={2} p={{ base: 4, md: 5 }}>
-              <Heading size={{ base: "sm", md: "md" }} lineHeight="shorter">
+            <Flex direction="column" gap={2}>
+              <Heading size={{ base: "sm", md: "sm" }} lineHeight="shorter">
                 {t(`trainingSession.speakers.${speaker.key}.name`)}
               </Heading>
               <Text color="aqua.700" fontSize={{ base: "xs", md: "sm" }} fontWeight="semibold">
@@ -90,11 +96,22 @@ export const TrainingSession = () => {
             </Flex>
           </Box>
         ))}
-      </SimpleGrid>
+        </SimpleGrid>
+      </Box>
 
-      <SimpleGrid columns={{ base: 2, md: 4 }} gap={3} mb={{ base: 4, md: 6 }}>
+      <Text color="aqua.800" fontSize={{ base: "xs", md: "sm" }} fontWeight="bold" mb={3}>
+        {t("trainingSession.galleryTitle")}
+      </Text>
+      <SimpleGrid columns={{ base: 2, md: 4 }} gap={3} mb={{ base: 5, md: 6 }}>
         {gallery.map((src, index) => (
-          <Box key={src} position="relative" h={{ base: "120px", md: "160px" }} borderRadius="lg" overflow="hidden">
+          <Box
+            key={src}
+            position="relative"
+            h={{ base: "120px", md: "160px" }}
+            borderRadius="lg"
+            overflow="hidden"
+            boxShadow="0 10px 20px rgba(9, 34, 52, 0.1)"
+          >
             <Image
               src={src}
               alt={`${t("trainingSession.galleryAlt")} ${index + 1}`}
@@ -107,11 +124,12 @@ export const TrainingSession = () => {
       </SimpleGrid>
 
       <Box
-        bg="aqua.50"
+        bg="white"
         border="1px solid"
-        borderColor="aqua.200"
+        borderColor="aqua.300"
         borderRadius={{ base: "xl", md: "2xl" }}
         p={{ base: 5, md: 6 }}
+        boxShadow="0 14px 30px rgba(0, 188, 212, 0.08)"
       >
         <Text color="aqua.800" fontSize={{ base: "xs", md: "sm" }} fontWeight="bold" mb={2}>
           {t("trainingSession.conclusionTitle")}

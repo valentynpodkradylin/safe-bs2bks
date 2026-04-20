@@ -39,7 +39,7 @@ export default function Home({
     currentLocale === "uk"
       ? "SAFE-BS2BKS, Балтійське море, Чорне море, затоплені боєприпаси, екологічна безпека, HELCOM, Україна"
       : "SAFE-BS2BKS, Baltic Sea, Black Sea, sea-dumped munitions, marine environmental security, HELCOM, Ukraine"
-  const ogImageUrl = `${siteUrl}/image.png`
+  const ogImageUrl = `${siteUrl}/safe-bs2bks-logo-mini.png`
   const isUk = currentLocale === "uk"
   const canonicalUrl = isUk ? `${siteUrl}/uk` : siteUrl
   const enUrl = siteUrl
