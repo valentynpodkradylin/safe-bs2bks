@@ -73,29 +73,29 @@ export const TrainingSession = () => {
         </Text>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 3, md: 4 }}>
-        {speakers.map((speaker) => (
-          <Box
-            key={speaker.key}
-            bg="white"
-            borderRadius={{ base: "xl", md: "2xl" }}
-            border="1px solid"
-            borderColor="slate.200"
-            boxShadow="0 12px 30px rgba(9, 34, 52, 0.06)"
-            p={{ base: 4, md: 5 }}
-          >
-            <Flex direction="column" gap={2}>
-              <Heading size={{ base: "sm", md: "sm" }} lineHeight="shorter">
-                {t(`trainingSession.speakers.${speaker.key}.name`)}
-              </Heading>
-              <Text color="aqua.700" fontSize={{ base: "xs", md: "sm" }} fontWeight="semibold">
-                {t(`trainingSession.speakers.${speaker.key}.role`)}
-              </Text>
-              <Text color="slate.600" fontSize={{ base: "sm", md: "md" }}>
-                {t(`trainingSession.speakers.${speaker.key}.summary`)}
-              </Text>
-            </Flex>
-          </Box>
-        ))}
+          {speakers.map((speaker) => (
+            <Box
+              key={speaker.key}
+              bg="white"
+              borderRadius={{ base: "xl", md: "2xl" }}
+              border="1px solid"
+              borderColor="slate.200"
+              boxShadow="0 12px 30px rgba(9, 34, 52, 0.06)"
+              p={{ base: 4, md: 5 }}
+            >
+              <Flex direction="column" gap={2}>
+                <Heading size={{ base: "sm", md: "sm" }} lineHeight="shorter">
+                  {t(`trainingSession.speakers.${speaker.key}.name`)}
+                </Heading>
+                <Text color="aqua.700" fontSize={{ base: "xs", md: "sm" }} fontWeight="semibold">
+                  {t(`trainingSession.speakers.${speaker.key}.role`)}
+                </Text>
+                <Text color="slate.600" fontSize={{ base: "sm", md: "md" }}>
+                  {t(`trainingSession.speakers.${speaker.key}.summary`)}
+                </Text>
+              </Flex>
+            </Box>
+          ))}
         </SimpleGrid>
       </Box>
 
